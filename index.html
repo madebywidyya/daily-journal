@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="DailyBloom - To Do List dan Habit Tracker untuk kehidupan yang lebih teratur">
+
+    <title>DailyBloom | To-Do & Habit Tracker</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER / NAVBAR
+    ========================== -->
+
+    <header class="site-header">
+
+        <!-- LOGO -->
+        <a href="#home" class="brand">
+
+            <span class="brand-mark">✦</span>
+
+            <span class="brand-name">
+                Daily<span>Bloom</span>
+            </span>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+        <nav class="nav">
+
+            <a href="#home" data-i18n="navHome">
+                Home
+            </a>
+
+            <a href="#features" data-i18n="navFeatures">
+                Features
+            </a>
+
+            <a href="#about" data-i18n="navAbout">
+                About
+            </a>
+
+            <a href="#promo" data-i18n="navPromo">
+                Promo
+            </a>
+
+        </nav>
+
+
+        <!-- HEADER ACTION -->
+        <div class="header-actions">
+
+            <!-- SEARCH -->
+            <button
+                class="icon-btn"
+                id="searchToggle"
+                aria-label="Search">
+
+                🔍
+
+            </button>
+
+
+            <!-- LANGUAGE -->
+            <select
+                id="language"
+                class="language"
+                aria-label="Language">
+
+                <option value="id">
+                    🇮🇩 ID
+                </option>
+
+                <option value="en">
+                    🇬🇧 EN
+                </option>
+
+            </select>
+
+
+            <!-- BUTTON -->
+            <a
+                href="#features"
+                class="btn btn-small"
+                data-i18n="startNow">
+
+                Mulai
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         SEARCH PANEL
+    ========================== -->
+
+    <div
+        class="search-panel"
+        id="searchPanel">
+
+        <div class="search-inner">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Cari fitur, kebiasaan, aktivitas...">
+
+            <button
+                id="closeSearch"
+                class="icon-btn">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH RESULT -->
+        <div
+            id="searchResults"
+            class="search-results">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main id="home">
+
+
+
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-copy">
+
+                <p
+                    class="eyebrow"
+                    data-i18n="eyebrow">
+
+                    A softer way to get things done
+
+                </p>
+
+
+                <h1 data-i18n="heroTitle">
+
+                    Rapikan hari.
+                    <br>
+
+                    <em>
+                        Hidup lebih berarti.
+                    </em>
+
+                </h1>
+
+
+                <p
+                    class="hero-text"
+                    data-i18n="heroText">
+
+                    To-do list dan habit tracker bernuansa
+                    vintage-modern untuk membantu kamu
+                    membangun rutinitas kecil yang
+                    terasa menyenangkan.
+
+                </p>
+
+
+
+                <!-- HERO BUTTON -->
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#features"
+                        class="btn"
+                        data-i18n="explore">
+
+                        Jelajahi fitur
+
+                    </a>
+
+
+                    <a
+                        href="#about"
+                        class="text-link"
+                        data-i18n="learnMore">
+
+                        Kenali DailyBloom →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- QUOTE -->
+
+                <div class="hero-note">
+
+                    <span>♡</span>
+
+                    <span data-i18n="heroNote">
+
+                        Small steps, lovely days.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 HERO DAILY CARD
+            ========================== -->
+
+            <div class="hero-card">
+
+                <div class="card-top">
+
+                    <span data-i18n="today">
+
+                        Today
+
+                    </span>
+
+
+                    <span
+                        class="date-pill"
+                        id="todayDate">
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-ring">
+
+                    <div>
+
+                        <strong>
+                            72%
+                        </strong>
+
+                        <small data-i18n="complete">
+
+                            complete
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MINI HABIT LIST -->
+
+                <div class="mini-list">
+
+
+                    <div class="mini-item done">
+
+                        <span>✓</span>
+
+                        <span data-i18n="mini1">
+
+                            Morning stretch
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="mini-item done">
+
+                        <span>✓</span>
+
+                        <span data-i18n="mini2">
+
+                            Drink enough water
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="mini-item">
+
+                        <span>○</span>
+
+                        <span data-i18n="mini3">
+
+                            Read 20 minutes
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="mini-item">
+
+                        <span>○</span>
+
+                        <span data-i18n="mini4">
+
+                            Plan tomorrow
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SLIDER SECTION
+        ========================== -->
+
+        <section
+            class="slider-section"
+            id="healthy-life">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p
+                        class="eyebrow"
+                        data-i18n="inspiration">
+
+                        Daily inspiration
+
+                    </p>
+
+
+                    <h2 data-i18n="sliderTitle">
+
+                        Kebiasaan kecil,
+                        <em>perubahan besar.</em>
+
+                    </h2>
+
+                </div>
+
+
+
+                <!-- SLIDER CONTROL -->
+
+                <div class="slider-controls">
+
+                    <button
+                        id="prevSlide"
+                        class="round-btn">
+
+                        ←
+
+                    </button>
+
+
+                    <span id="slideCount">
+
+                        01 / 05
+
+                    </span>
+
+
+                    <button
+                        id="nextSlide"
+                        class="round-btn">
+
+                        →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDER -->
+
+            <div class="slider">
+
+                <div
+                    class="slides"
+                    id="slides">
+
+
+                    <!-- SLIDE 1 -->
+
+                    <article class="slide active">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=85"
+                            alt="Morning meditation">
+
+
+                        <div class="slide-overlay">
+
+                            <span>01</span>
+
+                            <h3 data-i18n="slide1">
+
+                                Start slow, start well.
+
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SLIDE 2 -->
+
+                    <article class="slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1400&q=85"
+                            alt="Healthy food">
+
+
+                        <div class="slide-overlay">
+
+                            <span>02</span>
+
+                            <h3 data-i18n="slide2">
+
+                                Nourish your everyday.
+
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SLIDE 3 -->
+
+                    <article class="slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=85"
+                            alt="Healthy exercise">
+
+
+                        <div class="slide-overlay">
+
+                            <span>03</span>
+
+                            <h3 data-i18n="slide3">
+
+                                Move with intention.
+
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SLIDE 4 -->
+
+                    <article class="slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85"
+                            alt="Outdoor walk">
+
+
+                        <div class="slide-overlay">
+
+                            <span>04</span>
+
+                            <h3 data-i18n="slide4">
+
+                                Make room for fresh air.
+
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SLIDE 5 -->
+
+                    <article class="slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1400&q=85"
+                            alt="Journaling and planning">
+
+
+                        <div class="slide-overlay">
+
+                            <span>05</span>
+
+                            <h3 data-i18n="slide5">
+
+                                Plan a life you love.
+
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DOTS -->
+
+            <div
+                class="dots"
+                id="dots">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <section
+            class="features"
+            id="features">
+
+
+            <div class="section-heading centered">
+
+                <p
+                    class="eyebrow"
+                    data-i18n="featuresEyebrow">
+
+                    Designed for real life
+
+                </p>
+
+
+                <h2 data-i18n="featuresTitle">
+
+                    Sederhana untuk dipakai,
+                    <br>
+
+                    <em>
+                        indah untuk dilihat.
+                    </em>
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="feature-grid">
+
+
+                <!-- FEATURE 1 -->
+
+                <article
+                    class="feature-card featured">
+
+                    <div class="feature-icon">
+
+                        ✓
+
+                    </div>
+
+
+                    <h3 data-i18n="feature1Title">
+
+                        To-Do List
+
+                    </h3>
+
+
+                    <p data-i18n="feature1Text">
+
+                        Atur prioritas harian tanpa
+                        membuat semuanya terasa berat.
+
+                    </p>
+
+
+                    <a
+                        href="#demo"
+                        data-i18n="tryIt">
+
+                        Coba sekarang →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- FEATURE 2 -->
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+
+                        ↻
+
+                    </div>
+
+
+                    <h3 data-i18n="feature2Title">
+
+                        Habit Tracker
+
+                    </h3>
+
+
+                    <p data-i18n="feature2Text">
+
+                        Bangun kebiasaan sehat dan
+                        lihat progresmu dari waktu ke waktu.
+
+                    </p>
+
+
+                    <a
+                        href="#demo"
+                        data-i18n="tryIt">
+
+                        Coba sekarang →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- FEATURE 3 -->
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+
+                        ♡
+
+                    </div>
+
+
+                    <h3 data-i18n="feature3Title">
+
+                        Daily Balance
+
+                    </h3>
+
+
+                    <p data-i18n="feature3Text">
+
+                        Seimbangkan produktivitas,
+                        kesehatan, istirahat,
+                        dan me-time.
+
+                    </p>
+
+
+                    <a
+                        href="#demo"
+                        data-i18n="tryIt">
+
+                        Coba sekarang →
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TO DO DEMO
+        ========================== -->
+
+        <section
+            class="demo-section"
+            id="demo">
+
+
+            <div class="demo-copy">
+
+                <p
+                    class="eyebrow"
+                    data-i18n="demoEyebrow">
+
+                    A tiny preview
+
+                </p>
+
+
+                <h2 data-i18n="demoTitle">
+
+                    Mulai dari satu kebiasaan hari ini.
+
+                </h2>
+
+
+                <p data-i18n="demoText">
+
+                    Checklist di bawah ini tersimpan
+                    otomatis di browser kamu.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- TODO APP -->
+
+            <div class="todo-demo">
+
+
+                <div class="demo-head">
+
+                    <div>
+
+                        <strong data-i18n="dailyFocus">
+
+                            Daily focus
+
+                        </strong>
+
+
+                        <small id="demoDate">
+
+                        </small>
+
+                    </div>
+
+
+                    <span id="demoProgress">
+
+                        0 / 5
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- ADD TODO -->
+
+                <div class="add-row">
+
+                    <input
+                        type="text"
+                        id="todoInput"
+                        placeholder="Tambahkan aktivitas...">
+
+
+                    <button
+                        id="addTodo"
+                        class="btn btn-small"
+                        data-i18n="add">
+
+                        Tambah
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- TODO LIST -->
+
+                <ul
+                    id="todoList"
+                    class="todo-list">
+
+                </ul>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            class="about"
+            id="about">
+
+
+            <div class="about-art">
+
+                <span>✦</span>
+
+                <small>
+                    EST. 2026
+                </small>
+
+            </div>
+
+
+
+            <div>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="aboutEyebrow">
+
+                    About DailyBloom
+
+                </p>
+
+
+                <h2 data-i18n="aboutTitle">
+
+                    Produktif tanpa kehilangan
+                    <em>rasa.</em>
+
+                </h2>
+
+
+                <p data-i18n="aboutText">
+
+                    DailyBloom dibuat untuk menemani
+                    keseharian yang lebih tertata
+                    dengan desain hangat,
+                    fitur sederhana,
+                    dan ruang untuk bertumbuh
+                    sedikit demi sedikit.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROMO
+        ========================== -->
+
+        <section
+            class="promo"
+            id="promo">
+
+
+            <div>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="promoEyebrow">
+
+                    Coming soon
+
+                </p>
+
+
+                <h2 data-i18n="promoTitle">
+
+                    Promo & template journal.
+
+                </h2>
+
+
+                <p data-i18n="promoText">
+
+                    Area ini siap diisi promo,
+                    template digital,
+                    atau campaign pilihanmu
+                    di masa depan.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="#home"
+                class="btn light"
+                data-i18n="backTop">
+
+                Kembali ke atas ↑
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+
+        <div class="brand">
+
+            <span class="brand-mark">
+
+                ✦
+
+            </span>
+
+
+            <span class="brand-name">
+
+                Daily<span>Bloom</span>
+
+            </span>
+
+        </div>
+
+
+        <p>
+
+            © 2026 DailyBloom.
+            Made for everyday growth.
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- =========================
+         FLOATING WHATSAPP
+    ========================== -->
+
+    <a
+        class="wa-float"
+        href="https://wa.me/6282124411116?text=Halo%20kak%20gimana%20cara%20mengubah%20hidup%20kita%20ya%3F%3F..."
+        target="_blank"
+        rel="noopener"
+        aria-label="Chat WhatsApp">
+
+
+        <span class="wa-icon">
+
+            💬
+
+        </span>
+
+
+        <span
+            class="wa-tooltip"
+            data-i18n="waTooltip">
+
+            Chat via WhatsApp
+
+        </span>
+
+
+    </a>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
